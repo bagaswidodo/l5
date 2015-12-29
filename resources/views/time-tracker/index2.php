@@ -29,7 +29,20 @@
             </div>
         </nav>
 
+
+
         <div class="container">
+            <div class="time-entry-comment">                
+                <form class="navbar-form">
+                    <select name="user" class="form-control" ng-model="vm.timeEntryUser" ng-options="user.first_name + ' ' + user.last_name for user in vm.users">
+                        <option value="">-- Select a user --</option>
+                    </select>
+                    <input class="form-control" ng-model="vm.comment" placeholder="Enter a comment"></input>
+                    <button class="btn btn-primary" ng-click="vm.logNewTime()">Log Time</button>
+                </form>
+            </div>
+
+        
             <div class="col-sm-8">
 
                 <div class="well vm" ng-repeat="time in vm.timeentries">
