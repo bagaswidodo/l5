@@ -42,7 +42,7 @@ class TimeEntriesController extends Controller
     public function store(Request $request)
     {
         $data = Request::all();
-        $timeentry = new TimeEntry();
+        $timeentry = new TimeEntries();
         $timeentry->fill($data);
         $timeentry->save();
 
@@ -79,7 +79,10 @@ class TimeEntriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $timeentry = TimeEntries::find($id);
+        $data = Request::all();
+        $timeentry->fill($data);
+        $timeentry->save();
     }
 
     /**
