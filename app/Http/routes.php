@@ -41,7 +41,12 @@ Route::group(array('prefix' => 'api'), function() {
 Route::get('time-tracker',function(){
 	// return view('time-tracker.index'); //part1 -static version
 	return view('time-tracker.index2'); //part2 - dynamic version
-
+});
+// A route group allows us to have a prefix, in this case api
+Route::group(array('prefix' => 'api'), function()
+{
+    Route::resource('time', 'TimeEntriesController');
+    Route::resource('users', 'UsersController');
 });
 
 // CATCH ALL ROUTE =============================  
