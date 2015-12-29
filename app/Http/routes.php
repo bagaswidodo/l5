@@ -36,6 +36,12 @@ Route::group(array('prefix' => 'api'), function() {
   
 });
 
+
+//time-tracker
+Route::get('time-tracker',function(){
+	return view('time-tracker.index');
+});
+
 // CATCH ALL ROUTE =============================  
 // all routes that are not home or api will be redirected to the frontend 
 // this allows angular to route them 
