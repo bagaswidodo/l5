@@ -39,7 +39,9 @@ Route::group(array('prefix' => 'api'), function() {
 
 //time-tracker
 Route::get('time-tracker',function(){
-	return view('time-tracker.index');
+	// return view('time-tracker.index'); //part1 -static version
+	return view('time-tracker.index2'); //part2 - dynamic version
+
 });
 
 // CATCH ALL ROUTE =============================  
