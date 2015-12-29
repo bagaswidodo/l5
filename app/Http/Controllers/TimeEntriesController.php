@@ -93,6 +93,7 @@ class TimeEntriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $timeentry = TimeEntries::find($id);
+        $timeentry->delete();   
     }
 }

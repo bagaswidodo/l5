@@ -46,6 +46,24 @@
               });
             }
 
+            // PUT data
+            function updateTime(data) {
+              return Time.update({id:data.id}, data).$promise.then(function(success) {
+                console.log(success);
+              }, function(error) {
+                console.log(error);
+              });
+            }
+
+            // Send a DELETE request for a specific time entry
+            function deleteTime(id) {
+              return Time.delete({id:id}).$promise.then(function(success) {
+                console.log(success);
+              }, function(error) {
+                console.log(error);
+              });
+            }
+
             // Use Moment.js to get the duration of the time entry
             function getTimeDiff(start, end) {
                 var diff = moment(end).diff(moment(start));
@@ -77,7 +95,9 @@
                 getTime: getTime,
                 getTimeDiff: getTimeDiff,
                 getTotalTime: getTotalTime,
-                saveTime: saveTime
+                saveTime: saveTime,
+                updateTime: updateTime,
+                deleteTime: deleteTime
             }
         }
             
