@@ -35,6 +35,17 @@
                 });
             }
 
+            // Grab data passed from the view and send
+            // a POST request to the API to save the data
+            function saveTime(data) {
+
+              return Time.save(data).$promise.then(function(success) {
+                console.log(success);
+              }, function(error) {
+                console.log(error);
+              });
+            }
+
             // Use Moment.js to get the duration of the time entry
             function getTimeDiff(start, end) {
                 var diff = moment(end).diff(moment(start));
@@ -65,7 +76,8 @@
             return {
                 getTime: getTime,
                 getTimeDiff: getTimeDiff,
-                getTotalTime: getTotalTime
+                getTotalTime: getTotalTime,
+                saveTime: saveTime
             }
         }
             
