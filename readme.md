@@ -11,7 +11,7 @@
 1. clone this project <code> git clone https://github.com/bagaswidodo/l5.git</code>
 2. install composer dependencies <code>composer install</code>
 3. install node dependencies <code> npm install </code> 
-4. install bower components <code> bower install </bower>
+4. install bower components <code> bower install </code>
 5. modify .env file for your prefered database
 6. if using sqlite create file database.sqlite in database folder
 7. run <code> php artisan migrate --seed </code>
