@@ -68,4 +68,5 @@
     <script type="text/javascript" src="scripts/app.js"></script>
     <script type="text/javascript" src="scripts/controllers/TimeEntry.js"></script>
     <script type="text/javascript" src="scripts/services/time.js"></script>
+    <script type="text/javascript" src="scripts/services/user.js"></script>
 </html>
