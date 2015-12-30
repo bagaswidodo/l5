@@ -75,6 +75,7 @@
 	<tasks :list="tasks"></tasks>
 
 	<template id="tasks-template">
+		<h1>My Tasks (@{{remaining}})</h1>
 		<ul>
 			<li :class="{'completed' : task.completed }"
 			 v-for="task in list"
@@ -106,6 +107,13 @@
 	Vue.component('tasks',{
 		template:'#tasks-template',
 		props : ['list'],
+		computed : {
+			remaining : function(){
+				return this.list.filter(function(task){
+					return ! task.completed;
+				}).length;
+			},
+		}
 	});
 
 
