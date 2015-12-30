@@ -61,7 +61,7 @@ Route::post('login','UsersController@checkAuth');
 
 
 //todo app
-Route::get('todo',function(){
+Route::get('todos',function(){
     return view('todo.index');
 });
 
