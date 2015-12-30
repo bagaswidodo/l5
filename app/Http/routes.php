@@ -59,6 +59,13 @@ Route::resource('galeri', 'GalleryController');
 
 Route::post('login','UsersController@checkAuth');
 
+
+//todo app
+Route::get('todo',function(){
+    return view('todo.index');
+});
+
+
 // CATCH ALL ROUTE =============================  
 // all routes that are not home or api will be redirected to the frontend 
 // this allows angular to route them 
