@@ -41,6 +41,10 @@
 		@{{ $data | json }}
 	</pre>
 
+	<!-- wathc and computed -->
+	<h1>@{{ fullName }}</h1>
+	<input v-model="first" placeholder="First Name">
+	<input v-model="last" placeholder="Last Name">
 
 </div>
 
@@ -62,6 +66,9 @@
 			'message' : '',
 			'count' : 0,
 			points : 50,
+			first : 'Jeff',
+			last : 'Way',
+			fullName  : 'Jeff Way'
 		},
 		methods : {
 			updateCount : function(){
@@ -76,6 +83,14 @@
 
 				return 'Advanced';
 			}
+		},
+		watch : {
+			first : function(first){
+				this.fullName = first + ' ' + this.last;
+			},
+			last : function(last){
+				this.fullName = this.first + ' ' + last;
+			},
 		}
 		
 	});
