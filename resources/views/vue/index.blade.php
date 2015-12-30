@@ -82,16 +82,12 @@
 				}
 
 				return 'Advanced';
+			},
+			fullName : function(){
+				return this.first + ' ' + this.last;
 			}
 		},
-		watch : {
-			first : function(first){
-				this.fullName = first + ' ' + this.last;
-			},
-			last : function(last){
-				this.fullName = this.first + ' ' + last;
-			},
-		}
+		
 		
 	});
 </script>
