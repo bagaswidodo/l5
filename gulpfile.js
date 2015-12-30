@@ -10,6 +10,7 @@ var elixir = require('laravel-elixir');
  | file for our application, as well as publishing vendor resources.
  |
  */
+ //to not create *.map file
 elixir.config.sourcemaps = false;
 elixir(function(mix) {
     // mix.sass('app.scss');
