@@ -18,10 +18,9 @@
 	<button class="btn btn-info" v-show="message">Send Message</button>
 	
 	<h3>Event handling</h3>
-	<form action="foo" @submit.prevent="handleIt">
-		<button class="btn" type="submit">click me</button>
-	</form>
-
+	<button type="submit" @click="updateCount">
+		Increment counter : @{{ count }}
+	</button>
 
 	<h5>Debugging</h5>
 	<hr>
@@ -38,13 +37,15 @@
 	new Vue({
 		el : '#app',
 		data : {
-			'message' : ''
+			'message' : '',
+			'count' : 0
 		},
-		methods :{
-			handleIt : function(){
-				alert('handled');
+		methods : {
+			updateCount : function(){
+				this.count +=1;
 			}
 		},
+		
 	});
 </script>
 	
