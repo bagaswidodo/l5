@@ -24,10 +24,12 @@ elixir(function(mix) {
     mix.scripts([
     	'gallery/controllers/userController.js',
         'gallery/controllers/globalController.js',
-        'gallery/controllers/navigationController.js'
+        'gallery/controllers/navigationController.js',
+        'gallery/controllers/galleryController.js'
     ],'public/gallery/js/controller.js');
 
     mix.scripts([
-    	'gallery/models/userModel.js'
+    	'gallery/models/userModel.js',
+        'gallery/models/galleryModel.js'
     ],'public/gallery/js/models.js');
 });
