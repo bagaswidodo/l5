@@ -2,13 +2,30 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class UsersController extends Controller
-{
+{   
+    public function checkAuth(Request $request)
+    {
+        $credentials = [
+            'email' => $request->input('email'),
+            'password' => $request->input('password'),
+        ];
+
+        //if false
+        if(!Auth::attempt($credentials))
+        {
+            return response('invalid credentials', 403);
+        }
+
+        return response(Auth::user(),201);
+    }
+
     /**
      * Display a listing of the resource.
      *
