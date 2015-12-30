@@ -17,7 +17,7 @@ myApp.controller('userController', ['$scope','$location','userModel',  function(
 }]);
 myApp.controller('globalController', ['$scope', function($scope) {
     $scope.global = {};
-    $scope.global.navUrl = 'gallery/js/templates/partials/nav.html';
+    $scope.global.navUrl = 'gallery/templates/partials/nav.html';
 }]);
 myApp.controller('navController', ['$scope', '$location', 'userModel', function($scope, $location, userModel) {
     /*Variables*/

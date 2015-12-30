@@ -33,7 +33,7 @@ myApp.config(['$routeProvider', '$locationProvider',
         });
 
         $routeProvider.when('/logout', {
-            templateUrl: 'gallery/js/templates/users/logout.html',
+            templateUrl: 'gallery/templates/users/logout.html',
             controller: 'userController',
             authenticated: true
         });
