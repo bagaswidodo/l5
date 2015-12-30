@@ -16,9 +16,11 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        $this->call(TimeEntriesTableSeeder::class);
-        $this->call(UsersTableSeeder::class);
-        $this->command->info('User and Time entry seeded');
+        // $this->call(TodoTableSeeder::class);
+
+        // $this->call(TimeEntriesTableSeeder::class);
+        // $this->call(UsersTableSeeder::class);
+        // $this->command->info('User and Time entry seeded');
 
 
         // $this->call(UserTableSeeder::class);

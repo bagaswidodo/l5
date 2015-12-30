@@ -15,7 +15,7 @@
   <body>
   <div class="container">
 	    <h2>Todo</h2>
-	    <input class="form-control" type="text" ng-model="search">
+	    <input class="form-control" type="text" ng-model="search" placeholder="filter . .. ">
 	    <div ng-controller="TodoListController as todoList">
 	      <span>@{{todoList.remaining()}} of @{{todoList.todos.length}} remaining</span>
 	      [ <a href="" ng-click="todoList.archive()">archive</a> ]

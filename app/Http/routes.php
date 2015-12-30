@@ -65,6 +65,11 @@ Route::get('todos',function(){
     return view('todo.index');
 });
 
+use App\Todo;
+Route::get('api/todos',function(){
+    return Todo::all();
+});
+
 
 // CATCH ALL ROUTE =============================  
 // all routes that are not home or api will be redirected to the frontend 
