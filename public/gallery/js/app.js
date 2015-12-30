@@ -16,19 +16,19 @@ myApp.config(['$routeProvider', '$locationProvider',
 
         $routeProvider.when('/gallery/view', {
             templateUrl: 'gallery/templates/gallery/gallery-view.html',
-            controller: 'userController',
+            controller: 'galleryController',
             authenticated: true
         });
         
         $routeProvider.when('/gallery/add', {
             templateUrl: 'gallery/templates/gallery/gallery-add.html',
-            controller: 'userController',
+            controller: 'galleryController',
             authenticated: true
         });
 
         $routeProvider.when('/gallery/:id', {
             templateUrl: 'gallery/templates/gallery/gallery-single.html',
-            controller: 'userController',
+            controller: 'galleryController',
             authenticated: true
         });
 
