@@ -4,30 +4,30 @@ var myApp = angular.module('myApp', ['ngRoute', 'ngCookies']);
 myApp.config(['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) {
         $routeProvider.when('/', {
-            templateUrl: 'gallery/js/templates/users/login.html',
+            templateUrl: 'gallery/templates/users/login.html',
             controller: 'userController'
         });
 
         $routeProvider.when('/dashboard', {
-            templateUrl: 'gallery/js/templates/users/dashboard.html',
+            templateUrl: 'gallery/templates/users/dashboard.html',
             controller: 'userController',
             authenticated: true
         });
 
         $routeProvider.when('/gallery/view', {
-            templateUrl: 'gallery/js/templates/gallery/gallery-view.html',
+            templateUrl: 'gallery/templates/gallery/gallery-view.html',
             controller: 'userController',
             authenticated: true
         });
         
         $routeProvider.when('/gallery/add', {
-            templateUrl: 'gallery/js/templates/gallery/gallery-add.html',
+            templateUrl: 'gallery/templates/gallery/gallery-add.html',
             controller: 'userController',
             authenticated: true
         });
 
         $routeProvider.when('/gallery/:id', {
-            templateUrl: 'gallery/js/templates/gallery/gallery-single.html',
+            templateUrl: 'gallery/templates/gallery/gallery-single.html',
             controller: 'userController',
             authenticated: true
         });
