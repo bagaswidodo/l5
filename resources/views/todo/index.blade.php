@@ -15,11 +15,12 @@
   <body>
   <div class="container">
 	    <h2>Todo</h2>
+	    <input class="form-control" type="text" ng-model="search">
 	    <div ng-controller="TodoListController as todoList">
 	      <span>@{{todoList.remaining()}} of @{{todoList.todos.length}} remaining</span>
 	      [ <a href="" ng-click="todoList.archive()">archive</a> ]
 	      <ul class="unstyled">
-	        <li ng-repeat="todo in todoList.todos">
+	        <li ng-repeat="todo in todoList.todos | filter : search">
 	          <input type="checkbox" ng-model="todo.done">
 	          <span class="done-@{{todo.done}}">@{{todo.text}}</span>
 	        </li>
