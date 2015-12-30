@@ -24,6 +24,12 @@
 
 	<!-- <input type="color"></input> -->
 	<my-counter></my-counter>
+	<my-counter></my-counter>
+
+	<template id="counter-template">
+		<h1>Heading</h1>
+		<button @click="count += 1">@{{ count }}</button>
+	</template>
 
 	<h5>Debugging</h5>
 	<hr>
@@ -38,7 +44,10 @@
 <script src="vendor/vue/dist/vue.min.js"></script>
 <script>
 	Vue.component('my-counter',{
-		template : '<h1>Hello World </h1>'
+		template : '#counter-template',
+		data : function() {
+			return {count : 0};
+		}
 	});
 
 
