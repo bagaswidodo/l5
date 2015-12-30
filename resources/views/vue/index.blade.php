@@ -18,7 +18,7 @@
 	<button class="btn btn-info" v-show="message">Send Message</button>
 	
 	<h3>Event handling</h3>
-	<button type="submit" @click="updateCount">
+	<button type="submit" @click="count+=1">
 		Increment counter : @{{ count }}
 	</button>
 
