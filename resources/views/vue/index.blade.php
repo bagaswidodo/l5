@@ -73,7 +73,7 @@
 
 	<!-- rendering example -->
 	<ul>
-		<li class="completed" v-for="task in tasks">@{{ task.body }}</li>
+		<li :class="{'completed' : task.completed }" v-for="task in tasks">@{{ task.body }}</li>
 	</ul>
 
 	<!-- For Debugging purpose -->
