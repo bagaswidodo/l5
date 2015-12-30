@@ -1,0 +1,19 @@
+
+<div class="container">
+	<!-- <h1>Login Page</h1> -->
+	<div class="col-sm-4 col-sm-push-3 well">
+		<form name="loginForm" ng-submit="doLogin(loginForm)">
+			<div class="form-group">
+				<input class="form-control" type="email" name="email" ng-model="login.username"
+				required placeholder="Enter Your email address" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<input class="form-control" type="password" name="password" ng-model="login.password"
+				required placeholder="Enter Your password" class="form-control">
+			</div>
+
+			<input class="btn btn-success" type="submit" name="save" value="login"></input>
+		</form>
+	</div>
+</div>
