@@ -10,7 +10,22 @@ var elixir = require('laravel-elixir');
  | file for our application, as well as publishing vendor resources.
  |
  */
-
+elixir.config.sourcemaps = false;
 elixir(function(mix) {
-    mix.sass('app.scss');
+    // mix.sass('app.scss');
+    
+
+    mix.scripts([
+    	'app.js'
+    ],'public/elixir/js/app.js');
+
+    mix.scripts([
+    	'controllers/userController.js',
+        'controllers/globalController.js',
+        'controllers/navController.js'
+    ],'public/elixir/js/controller.js');
+
+    mix.scripts([
+    	'models/userModel.js'
+    ],'public/elixir/js/models.js');
 });
