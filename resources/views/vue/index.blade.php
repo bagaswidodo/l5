@@ -72,12 +72,16 @@
 
 
 	<!-- rendering example -->
-	<ul>
-		<li :class="{'completed' : task.completed }"
-		 v-for="task in tasks"
-		 @click="task.completed = ! task.completed"
-		 >@{{ task.body }}</li>
-	</ul>
+	<tasks :list="tasks"></tasks>
+
+	<template id="tasks-template">
+		<ul>
+			<li :class="{'completed' : task.completed }"
+			 v-for="task in list"
+			 @click="task.completed = ! task.completed"
+			 >@{{ task.body }}</li>
+		</ul>
+	</template>
 
 	<!-- For Debugging purpose -->
 	<h5>Debugging</h5>
@@ -97,6 +101,11 @@
 		data : function() {
 			return {count : 0};
 		}
+	});
+
+	Vue.component('tasks',{
+		template:'#tasks-template',
+		props : ['list'],
 	});
 
 
