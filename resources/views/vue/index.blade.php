@@ -16,11 +16,20 @@
 	<input v-model="message">
 
 	<button class="btn btn-info" v-show="message">Send Message</button>
+	
+	<h3>Event handling</h3>
+	<form action="foo" @submit.prevent="handleIt">
+		<button class="btn" type="submit">click me</button>
+	</form>
+
+
 	<h5>Debugging</h5>
 	<hr>
 	<pre>
 		@{{ $data | json }}
 	</pre>
+
+
 </div>
 
 
@@ -30,6 +39,11 @@
 		el : '#app',
 		data : {
 			'message' : ''
+		},
+		methods :{
+			handleIt : function(){
+				alert('handled');
+			}
 		},
 	});
 </script>
