@@ -70,6 +70,17 @@ Route::get('api/todos',function(){
     return Todo::all();
 });
 
+Route::post('api/todos',function(){
+    return Todo::create(Input::all());
+});
+
+// Route::delete('api/todos/{id}',function($id){
+//     $data = Todo::findOrFail($id);
+//     return Todo::delete($data);
+// });
+
+
+
 
 // CATCH ALL ROUTE =============================  
 // all routes that are not home or api will be redirected to the frontend 

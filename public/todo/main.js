@@ -11,7 +11,16 @@ angular.module('todoApp', [])
  	});
 
     todoList.addTodo = function() {
-      todoList.todos.push({text:todoList.todoText, done:false});
+    	var todo = {
+    		body : todoList.todoText,
+    		completed : false
+    	};
+
+
+      // todoList.todos.push({text:todoList.todoText, done:false});
+      todoList.todos.push(todo);
+
+      $http.post('api/todos',todo);
       todoList.todoText = '';
     };
  
