@@ -73,7 +73,10 @@
 
 	<!-- rendering example -->
 	<ul>
-		<li :class="{'completed' : task.completed }" v-for="task in tasks">@{{ task.body }}</li>
+		<li :class="{'completed' : task.completed }"
+		 v-for="task in tasks"
+		 @click="toggleCompletedFor(task)"
+		 >@{{ task.body }}</li>
 	</ul>
 
 	<!-- For Debugging purpose -->
@@ -122,7 +125,11 @@
 		methods : {
 			updateCount : function(){
 				this.count +=1;
-			}
+			},
+			toggleCompletedFor : function(task){
+				task.completed = !task.completed;
+				// alert(!task.completed);
+			},
 		},
 		computed : {
 			skill : function(){
