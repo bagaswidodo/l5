@@ -31,6 +31,10 @@
 		<button @click="count += 1">@{{ count }}</button>
 	</template>
 
+
+	<!-- computed prop -->
+	<h1>Skill : @{{ skill }}</h1>
+	<input v-model="points">
 	<h5>Debugging</h5>
 	<hr>
 	<pre>
@@ -56,13 +60,23 @@
 		el : '#app',
 		data : {
 			'message' : '',
-			'count' : 0
+			'count' : 0,
+			points : 50,
 		},
 		methods : {
 			updateCount : function(){
 				this.count +=1;
 			}
 		},
+		computed : {
+			skill : function(){
+				if(this.points <= 100){
+					return 'Beginner';
+				}
+
+				return 'Advanced';
+			}
+		}
 		
 	});
 </script>
