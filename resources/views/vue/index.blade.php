@@ -35,16 +35,44 @@
 	<!-- computed prop -->
 	<h1>Skill : @{{ skill }}</h1>
 	<input v-model="points">
-	<h5>Debugging</h5>
-	<hr>
-	<pre>
-		@{{ $data | json }}
-	</pre>
+	
 
 	<!-- wathc and computed -->
 	<h1>@{{ fullName }}</h1>
 	<input v-model="first" placeholder="First Name">
 	<input v-model="last" placeholder="Last Name">
+
+
+	<!-- subscription plan -->
+	<h1>Plan subscription</h1>
+	<div v-for="plan in plans">
+		<plan :plan="plan" :active.sync="active"></plan>
+	</div>
+
+	<template id="plan-template">
+		<div>
+			<span class="Plan__name">
+				@{{ plan.name }}
+			</span>
+
+			<span class="Plan__price">
+				@{{plan.price}}/month
+			</span>
+
+			<button @click="setActivePlan" v-show="plan.name !== active.name">
+				@{{ isUpdgraded ? 'Upgrade' : 'Downgrade' }}
+			</button>
+
+			<span v-else><strong>Current Plan</strong></span>
+		</div>
+	</template>
+
+	<!-- For Debugging purpose -->
+	<h5>Debugging</h5>
+	<hr>
+	<pre>
+		@{{ $data | json }}
+	</pre>
 
 </div>
 
@@ -68,7 +96,14 @@
 			points : 50,
 			first : 'Jeff',
 			last : 'Way',
-			fullName  : 'Jeff Way'
+			fullName  : 'Jeff Way',
+			plans : [
+				{name : 'Enterprise', price : 100},
+				{name : 'Pro', price : 50},
+				{name : 'Personal', price : 10},
+				{name : 'Free', price : 0},
+			],
+			active : {}
 		},
 		methods : {
 			updateCount : function(){
@@ -85,6 +120,29 @@
 			},
 			fullName : function(){
 				return this.first + ' ' + this.last;
+			}
+		},
+		components : {
+			plan : {
+				template : '#plan-template',
+				props : ['plan','active'],
+				data : function () {
+					return {
+						active : false
+					};
+				},
+				computed : {
+					isUpdgraded : function(){
+							return this.plan.price > this.active.price;
+					}
+				},
+				methods : {
+					setActivePlan : function(){
+						this.active = this.plan;
+						// console.log('change plan');
+						// alert(this.active + ' ' + this.plan) ;
+					}
+				}
 			}
 		},
 		
