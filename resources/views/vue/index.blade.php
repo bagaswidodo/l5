@@ -23,11 +23,11 @@
 	</button>
 
 	<!-- <input type="color"></input> -->
-	<my-counter></my-counter>
-	<my-counter></my-counter>
+	<my-counter subject="Likes"></my-counter>
+	<my-counter subject="Dislikes"></my-counter>
 
 	<template id="counter-template">
-		<h1>Heading</h1>
+		<h1>@{{subject}}</h1>
 		<button @click="count += 1">@{{ count }}</button>
 	</template>
 
@@ -45,6 +45,7 @@
 <script>
 	Vue.component('my-counter',{
 		template : '#counter-template',
+		props : ['subject'],
 		data : function() {
 			return {count : 0};
 		}
