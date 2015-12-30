@@ -49,6 +49,15 @@ Route::group(array('prefix' => 'api'), function()
     Route::resource('users', 'UsersController');
 });
 
+
+//spa gallery
+Route::get('galeri',function(){
+    return view('gallery.index');
+    // return 'foo';
+});
+
+Route::post('login','UsersController@checkAuth');
+
 // CATCH ALL ROUTE =============================  
 // all routes that are not home or api will be redirected to the frontend 
 // this allows angular to route them 
