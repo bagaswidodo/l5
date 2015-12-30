@@ -80,6 +80,13 @@ Route::post('api/todos',function(){
 // });
 
 
+/*
+vuejs
+*/
+Route::get('vuejs',function(){
+    return view('vue.index');
+});
+
 
 
 // CATCH ALL ROUTE =============================  
