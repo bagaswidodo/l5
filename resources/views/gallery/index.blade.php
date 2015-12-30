@@ -18,9 +18,9 @@
 	<script src="vendor/angular/angular.min.js"></script>
 	<script src="vendor/angular-route/angular-route.min.js"></script>
 	<script src="vendor/angular-cookies/angular-cookies.min.js"></script>
-	<script src="elixir/js/app.js"></script>
-	<script src="elixir/js/models.js"></script>
-	<script src="elixir/js/controller.js"></script>
+	<script src="gallery/js/app.js"></script>
+	<script src="gallery/js/models.js"></script>
+	<script src="gallery/js/controller.js"></script>
 
 
 </body>
