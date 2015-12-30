@@ -17,16 +17,16 @@ elixir(function(mix) {
     
 
     mix.scripts([
-    	'app.js'
-    ],'public/elixir/js/app.js');
+    	'gallery/app.js'
+    ],'public/gallery/js/app.js');
 
     mix.scripts([
-    	'controllers/userController.js',
-        'controllers/globalController.js',
-        'controllers/navController.js'
-    ],'public/elixir/js/controller.js');
+    	'gallery/controllers/userController.js',
+        'gallery/controllers/globalController.js',
+        'gallery/controllers/navigationController.js'
+    ],'public/gallery/js/controller.js');
 
     mix.scripts([
-    	'models/userModel.js'
-    ],'public/elixir/js/models.js');
+    	'gallery/models/userModel.js'
+    ],'public/gallery/js/models.js');
 });
