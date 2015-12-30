@@ -16,6 +16,7 @@ elixir(function(mix) {
     // mix.sass('app.scss');
     
 
+    mix.sass('gallery.scss', 'public/gallery/css/styles.css');
     mix.scripts([
     	'gallery/app.js'
     ],'public/gallery/js/app.js');

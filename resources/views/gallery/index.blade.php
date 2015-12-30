@@ -3,6 +3,7 @@
 <head>
 	<title>Laravel 5 Gallery SPA</title>
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="gallery/css/styles.css">
 	<script>
 	 var baseUrl = "{{ url('/') }}/";
 	  var csrfToken = "{{ csrf_token() }}";
