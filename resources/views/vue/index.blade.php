@@ -19,8 +19,11 @@
 	
 	<h3>Event handling</h3>
 	<button type="submit" @click="count+=1">
-		Increment counter : @{{ count }}
+		Likes : @{{ count }}
 	</button>
+
+	<!-- <input type="color"></input> -->
+	<my-counter></my-counter>
 
 	<h5>Debugging</h5>
 	<hr>
@@ -34,6 +37,11 @@
 
 <script src="vendor/vue/dist/vue.min.js"></script>
 <script>
+	Vue.component('my-counter',{
+		template : '<h1>Hello World </h1>'
+	});
+
+
 	new Vue({
 		el : '#app',
 		data : {
