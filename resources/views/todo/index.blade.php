@@ -21,8 +21,8 @@
 	      [ <a href="" ng-click="todoList.archive()">archive</a> ]
 	      <ul class="unstyled">
 	        <li ng-repeat="todo in todoList.todos | filter : search">
-	          <input type="checkbox" ng-model="todo.done">
-	          <span class="done-@{{todo.done}}">@{{todo.text}}</span>
+	          <input type="checkbox" ng-model="todo.completed">
+	          <span class="done-@{{todo.done}}">@{{todo.body}}</span>
 	        </li>
 	      </ul>
 	      <form ng-submit="todoList.addTodo()">

@@ -1,10 +1,15 @@
 angular.module('todoApp', [])
-  .controller('TodoListController', function() {
+  .controller('TodoListController', function($http) {
     var todoList = this;
-    todoList.todos = [
-      {text:'learn angular', done:true},
-      {text:'build an angular app', done:false}];
- 
+    // todoList.todos = [
+    //   {text:'learn angular', done:true},
+    //   {text:'build an angular app', done:false}];
+
+    // console.log($http);
+ 	$http.get("api/todos").success(function(hasil){
+ 		todoList.todos = hasil;
+ 	});
+
     todoList.addTodo = function() {
       todoList.todos.push({text:todoList.todoText, done:false});
       todoList.todoText = '';
