@@ -51,10 +51,11 @@ Route::group(array('prefix' => 'api'), function()
 
 
 //spa gallery
-Route::get('galeri',function(){
+Route::get('galeri-spa',function(){
     return view('gallery.index');
     // return 'foo';
 });
+Route::resource('galeri', 'GalleryController');
 
 Route::post('login','UsersController@checkAuth');
 
