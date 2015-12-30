@@ -3,6 +3,9 @@
 <head>
 	<title>Vue static</title>
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+	<style>
+	.completed { text-decoration: line-through;}
+	</style>
 </head>
 <body>
 
@@ -67,6 +70,12 @@
 		</div>
 	</template>
 
+
+	<!-- rendering example -->
+	<ul>
+		<li class="completed" v-for="task in tasks">@{{ task.body }}</li>
+	</ul>
+
 	<!-- For Debugging purpose -->
 	<h5>Debugging</h5>
 	<hr>
@@ -102,6 +111,11 @@
 				{name : 'Pro', price : 50},
 				{name : 'Personal', price : 10},
 				{name : 'Free', price : 0},
+			],
+			tasks :[
+				{body : 'Go To The store', completed:true},
+				{body : 'Go To The Bank', completed:false},
+				{body : 'Go To The doctor', completed:false},
 			],
 			active : {}
 		},
