@@ -43,4 +43,14 @@ elixir(function(mix) {
         'vendor/vue.min.js',
         'vendor/vue-resource.min.js'
     ], 'public/js/vendor/vue-vendor.js');
+
+    mix.scripts([
+        'customer/services/customerService.js',
+        'customer/filters/startFrom.js',
+        'customer/controllers/listCtrl.js',
+        'customer/controllers/editCtrl.js',
+        'customer/app.js'
+    ],'public/customer/scripts.js');
+
+
 });
