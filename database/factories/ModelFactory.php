@@ -16,3 +16,9 @@ $factory->define(App\Task::class, function (Faker\Generator $faker) {
         'name' => $faker->title,
     ];
 });
+
+$factory->define(App\Note::class,function (Faker\Generator $faker) {
+    return [
+        'body' => $faker->paragraph,
+    ];
+});

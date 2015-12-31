@@ -86,6 +86,10 @@ vuejs
 Route::get('vuejs',function(){
     return view('vue.index');
 });
+Route::get('vue-dynamic',function(){
+    $notes = \App\Note::get();
+    return view('vue.dynamic',compact('notes'));
+});
 
 
 
