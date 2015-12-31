@@ -18,8 +18,8 @@
 			</li>
 		</ul>
 	</template>
-	<script src="vendor/jquery/dist/jquery.min.js"></script>
 	<script src="vendor/vue/dist/vue.min.js"></script>
+	<script src="vendor/vue-resource/dist/vue-resource.min.js"></script>
 	<script>
 	Vue.component('tasks',{
 		template : '#task-template',
@@ -36,9 +36,9 @@
 				this.list.$remove(note);
 			},
 			fetchTaskList : function(){
-				$.getJSON('api/notes',function(data){
+				this.$http.get('api/notes',function(data){
 					this.list=data;
-				}.bind(this));
+				});
 			}
 		}
 	});
