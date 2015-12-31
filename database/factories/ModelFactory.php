@@ -34,7 +34,7 @@ $factory->define(App\Student::class,function (Faker\Generator $faker) {
 $factory->define(App\Message::class,function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
-        'messages' => $faker->paragraph,
+        'body' => $faker->paragraph,
     ];
 });
 

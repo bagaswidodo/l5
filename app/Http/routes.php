@@ -110,3 +110,6 @@ get('api/guestbook',function(){
 post('api/guestbook',function(){
     App\Message::create(Request::all());
 });
+Route::delete('api/guestbook/{id}',function($id){
+    App\Message::destroy($id);
+});
