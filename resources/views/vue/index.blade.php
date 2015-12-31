@@ -88,6 +88,8 @@
 		</ul>
 
 		<p v-else> No Tasks</p>
+
+		<button @click="clearCompleted">Clear Completed</button>
 	</template>
 
 	<!-- For Debugging purpose -->
@@ -128,7 +130,11 @@
 			},
 			removeTask : function(task){
 				return this.list.$remove(task);
+			},
+			clearCompleted : function(){
+				this.list = this.list.filter(this.inProgress);
 			}
+
 		}
 	});
 
