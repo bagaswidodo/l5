@@ -1,0 +1,75 @@
+ <div class="row">
+            <a class="btn btn-lg btn-success" href="#/edit-customer/0"><i class="glyphicon glyphicon-plus"></i>&nbsp;Add new Customer</a>
+
+        <div ng-show="customers.length == 0">
+            <div class="alert alert-warning">
+                No Customer found
+            </div>
+        </div>
+
+    <div class="col-md-12" ng-show="customers.length > 0">
+ 		<!-- tools -->
+        <div class="row">
+            <div class="col-md-2">PageSize:
+                <select ng-model="entryLimit" class="form-control">
+                    <option>5</option>
+                    <option>10</option>
+                    <option>20</option>
+                    <option>50</option>
+                    <option>100</option>
+                </select>
+            </div>
+            <div class="col-md-3">Filter:
+                <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" />
+            </div>
+            <div class="col-md-4">
+                <h5>Filtered {{ filtered.length }} of {{ totalItems }} total customers</h5>
+            </div>
+        </div>
+        <!-- end tools -->  
+
+        
+
+         <table class="table table-striped table-bordered">
+        <thead>
+        <th>Customer Name&nbsp;</th>
+        <th>Email&nbsp;</th>
+        <th>Address&nbsp;</th>
+        <th>City&nbsp;</th>
+        <th>Country&nbsp;</th>
+        <th>Action&nbsp;</th>
+        </thead>
+        <tbody>
+            <!-- <tr ng-repeat="data in customers"> -->
+            <tr ng-repeat="data in filtered = (customers | filter:search | orderBy : predicate :reverse) | startFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                <td>{{data.name}}</td>
+                <td>{{data.email}}</td>
+                <td>{{data.address}}</td>
+                <td>{{data.city}}</td>
+                <td>{{data.country}}</td>
+                <td>
+                    <a href="#/edit-customer/{{data.id}}" class="btn">
+                        &nbsp;<i class="glyphicon glyphicon-edit"></i>&nbsp; Edit Customer
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+
+
+        <!-- if empty -->
+        <div class="col-md-12" ng-show="filteredItems == 0">
+            <div class="col-md-12">
+                <div class="alert alert-warning"><strong>No Customers Found</strong></div>
+            </div>
+        </div>
+        <!-- pagination -->
+        <div class="col-md-12" ng-show="filteredItems > 0">    
+
+            <div pagination="" page="currentPage" on-select-page="setPage(page)" boundary-links="true" 
+            total-items="filteredItems" items-per-page="entryLimit" class="pagination-small" 
+            previous-text="&laquo;" next-text="&raquo;"></div>   
+        </div>
+
+    </div>
+</div>

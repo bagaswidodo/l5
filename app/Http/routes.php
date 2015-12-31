@@ -113,3 +113,10 @@ post('api/guestbook',function(){
 Route::delete('api/guestbook/{id}',function($id){
     App\Message::destroy($id);
 });
+
+
+//Angular CRUD
+Route::get('ng-customer',function(){
+    return view('angular.customer.index');
+});
+Route::resource('api/customer','CustomerController');

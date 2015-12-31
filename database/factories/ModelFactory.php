@@ -38,3 +38,14 @@ $factory->define(App\Message::class,function (Faker\Generator $faker) {
     ];
 });
 
+$factory->define(App\Customer::class,function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'email' => $faker->email,
+        'address' => $faker->address,
+        'country' => $faker->country,
+        'city' => $faker->city
+    ];
+});
+
+
