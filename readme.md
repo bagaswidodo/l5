@@ -7,6 +7,11 @@
 5. Crud Students with VueJS
 6. Guestbook REST with VueJS
 
+Todo
+1. auth login
+2. secure REST API
+
+
 ... still development
 
 
@@ -21,3 +26,7 @@
 8. mix scripts using gulp. run <code> gulp </code>
 8. serve app <code> php artisan serve</code>
 9. browse in URL provide. usually http://localhost:8000
+
+# Documentation
+
+PDF (soon)
