@@ -16,20 +16,31 @@ elixir(function(mix) {
     // mix.sass('app.scss');
     
 
-    mix.sass('gallery.scss', 'public/gallery/css/styles.css');
-    mix.scripts([
-    	'gallery/app.js'
-    ],'public/gallery/js/app.js');
+    // mix.sass('gallery.scss', 'public/gallery/css/styles.css');
+    // mix.scripts([
+    // 	'gallery/app.js'
+    // ],'public/gallery/js/app.js');
+
+    // mix.scripts([
+    // 	'gallery/controllers/userController.js',
+    //     'gallery/controllers/globalController.js',
+    //     'gallery/controllers/navigationController.js',
+    //     'gallery/controllers/galleryController.js'
+    // ],'public/gallery/js/controller.js');
+
+    // mix.scripts([
+    // 	'gallery/models/userModel.js',
+    //     'gallery/models/galleryModel.js'
+    // ],'public/gallery/js/models.js');
+
+    var bowerDir= 'public/vendor/',
+     jsDir = 'resources/assets/js/vendor';
+
+    mix.copy(bowerDir+ 'vue/dist/vue.min.js', jsDir);
+    mix.copy(bowerDir+ 'vue-resource/dist/vue-resource.min.js', jsDir);
 
     mix.scripts([
-    	'gallery/controllers/userController.js',
-        'gallery/controllers/globalController.js',
-        'gallery/controllers/navigationController.js',
-        'gallery/controllers/galleryController.js'
-    ],'public/gallery/js/controller.js');
-
-    mix.scripts([
-    	'gallery/models/userModel.js',
-        'gallery/models/galleryModel.js'
-    ],'public/gallery/js/models.js');
+        'vendor/vue.min.js',
+        'vendor/vue-resource.min.js'
+    ], 'public/js/vendor/vue-vendor.js');
 });

@@ -22,3 +22,11 @@ $factory->define(App\Note::class,function (Faker\Generator $faker) {
         'body' => $faker->paragraph,
     ];
 });
+
+$factory->define(App\Student::class,function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'email' => $faker->email,
+        'address' => $faker->address,
+    ];
+});

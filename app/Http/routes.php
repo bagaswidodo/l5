@@ -93,6 +93,12 @@ Route::get('vue-dynamic',function(){
     return view('vue.dynamic');
 });
 
+// crud vuejs
+Route::get('student',function(){
+    return view('students.index');
+});
+Route::resource('api/students','StudentController');
+
 
 
 // CATCH ALL ROUTE =============================  
