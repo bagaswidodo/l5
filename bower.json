@@ -25,6 +25,7 @@
     "angular-cookies": "~1.4.8",
     "vue": "~1.0.13",
     "material-design-lite": "~1.0.6",
-    "bootstrap-material-design": "~0.5.7"
+    "bootstrap-material-design": "~0.5.7",
+    "vue-resource": "~0.5.1"
   }
 }
