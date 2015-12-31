@@ -29,13 +29,16 @@
 			}
 		},
 		created:function(){
-			$.getJSON('api/notes',function(data){
-				this.list=data;
-			}.bind(this));
+			this.fetchTaskList();
 		},
 		methods:{
 			delete : function(note){
 				this.list.$remove(note);
+			},
+			fetchTaskList : function(){
+				$.getJSON('api/notes',function(data){
+					this.list=data;
+				}.bind(this));
 			}
 		}
 	});
