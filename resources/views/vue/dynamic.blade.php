@@ -14,7 +14,7 @@
 	<template id="task-template">
 		<ul class="list-group">
 			<li class="list-group-item" v-for="note in list">
-			@{{note.body}}
+			@{{note.body}} <a @click="delete(note)">X</a>
 			</li>
 		</ul>
 	</template>
@@ -32,6 +32,11 @@
 			$.getJSON('api/notes',function(data){
 				this.list=data;
 			}.bind(this));
+		},
+		methods:{
+			delete : function(note){
+				this.list.$remove(note);
+			}
 		}
 	});
 
