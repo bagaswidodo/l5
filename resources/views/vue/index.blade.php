@@ -82,7 +82,9 @@
 			<li :class="{'completed' : task.completed }"
 			 v-for="task in list"
 			 @click="task.completed = ! task.completed"
-			 >@{{ task.body }}</li>
+			 >@{{ task.body }} 
+			 <a @click="removeTask(task)">x</a>
+			 </li>
 		</ul>
 	</template>
 
@@ -121,6 +123,9 @@
 
 			inProgress : function(task){
 				return ! this.isCompleted(task);
+			},
+			removeTask : function(task){
+				return this.list.$remove(task);
 			}
 		}
 	});
