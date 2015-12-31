@@ -100,10 +100,13 @@ Route::get('student',function(){
 Route::resource('api/students','StudentController');
 
 
-
-// CATCH ALL ROUTE =============================  
-// all routes that are not home or api will be redirected to the frontend 
-// this allows angular to route them 
-// App::missing(function($exception) { 
-//     return View::make('index'); 
-// });
+//guestbook vuejs
+Route::get('gb',function(){
+    return view('guestbook.index');
+}); 
+get('api/guestbook',function(){
+    return App\Message::latest()->get();
+});
+post('api/guestbook',function(){
+    App\Message::create(Request::all());
+});

@@ -30,3 +30,11 @@ $factory->define(App\Student::class,function (Faker\Generator $faker) {
         'address' => $faker->address,
     ];
 });
+
+$factory->define(App\Message::class,function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->name,
+        'messages' => $faker->paragraph,
+    ];
+});
+
