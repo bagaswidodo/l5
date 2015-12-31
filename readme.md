@@ -6,9 +6,9 @@
 4. VueJS 101
 5. Crud Students with VueJS
 6. Guestbook REST with VueJS
-7. Crud App filter with Angular JS, Laravel REST API
+7. Crud App, filter, pagination with Angular JS and angular bootstrap, Laravel REST API
 
-Todo
+### Todo
 1. auth login
 2. secure REST API
 
