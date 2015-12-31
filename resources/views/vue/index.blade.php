@@ -75,7 +75,9 @@
 	<tasks :list="tasks"></tasks>
 
 	<template id="tasks-template">
-		<h1>My Tasks (@{{remaining}})</h1>
+		<h1>My Tasks 
+		<span v-show="remaining">(@{{remaining}})</span>
+		</h1>
 		<ul>
 			<li :class="{'completed' : task.completed }"
 			 v-for="task in list"
@@ -118,7 +120,7 @@
 			},
 
 			inProgress : function(task){
-				return this.isCompleted(task);
+				return ! this.isCompleted(task);
 			}
 		}
 	});
