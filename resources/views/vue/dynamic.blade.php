@@ -8,7 +8,7 @@
 	<div class="container">
 	<h1>Task List</h1>
 
-		<tasks list="{{ json_encode($notes) }}"></tasks>
+		<tasks></tasks>
 	</div>
 
 	<template id="task-template">
@@ -18,13 +18,20 @@
 			</li>
 		</ul>
 	</template>
+	<script src="vendor/jquery/dist/jquery.min.js"></script>
 	<script src="vendor/vue/dist/vue.min.js"></script>
 	<script>
 	Vue.component('tasks',{
 		template : '#task-template',
-		props : ['list'],
-		created(){
-			this.list = JSON.parse(this.list);
+		data : function(){
+			return {
+				list : [] 
+			}
+		},
+		created:function(){
+			$.getJSON('api/notes',function(data){
+				this.list=data;
+			}.bind(this));
 		}
 	});
 
