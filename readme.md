@@ -1,11 +1,11 @@
 # Laravel Quickstart - Basic
 
-
 1. Create,Delete, Show Tasks
 2. [Single Page Application Comment with angularjs](https://scotch.io/tutorials/create-a-laravel-and-angular-single-page-comment-application)
 3. [Single Page Application Gallery app with login (angularjs)] (http://amitavroy.com/justread/content/articles/spa-laravel-angularjs-1-setting-app-and-routes)
 4. VueJS 101
-5. Crud Students with VUEJS
+5. Crud Students with VueJS
+6. Guestbook REST with VueJS
 
 ... still development
 
@@ -20,4 +20,4 @@
 7. run <code> php artisan migrate --seed </code>
 8. mix scripts using gulp. run <code> gulp </code>
 8. serve app <code> php artisan serve</code>
-9. browse in URL provde usually http://localhost:8000
+9. browse in URL provide. usually http://localhost:8000
