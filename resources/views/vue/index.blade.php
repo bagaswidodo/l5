@@ -78,7 +78,7 @@
 		<h1>My Tasks 
 		<span v-show="remaining">(@{{remaining}})</span>
 		</h1>
-		<ul>
+		<ul v-show="list.length">
 			<li :class="{'completed' : task.completed }"
 			 v-for="task in list"
 			 @click="task.completed = ! task.completed"
@@ -86,6 +86,8 @@
 			 <a @click="removeTask(task)">x</a>
 			 </li>
 		</ul>
+
+		<p v-else> No Tasks</p>
 	</template>
 
 	<!-- For Debugging purpose -->
