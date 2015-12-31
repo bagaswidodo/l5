@@ -182,3 +182,18 @@ Route::group(['domain' => 'api.jwt.dev', 'prefix' => 'v1'], function () {
         return ['data' => 'This has come from a dedicated API subdomain with restricted access.'];
     });
 });
+
+
+//tood JWT
+Route::get('jwt/todos',function(){
+    return view('jwt.todo');
+});
+
+Route::post('api/jwt/register', 'TokenAuthController@register');
+Route::post('api/jwt/authenticate', 'TokenAuthController@authenticate');
+Route::get('jwt/api/authenticate/user', 'TokenAuthController@getAuthUser');
+Route::resource('api/jwt/todo', 'CatatanController');
+
+Route::get('foo',function(){
+    return \App\User::all();
+});
