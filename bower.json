@@ -28,6 +28,8 @@
     "bootstrap-material-design": "~0.5.7",
     "vue-resource": "~0.5.1",
     "angular-loading-bar": "~0.8.0",
-    "ngstorage": "~0.3.10"
+    "ngstorage": "~0.3.10",
+    "angular-material-design-lite": "~0.4.3",
+    "components-font-awesome": "~4.5.0"
   }
 }
