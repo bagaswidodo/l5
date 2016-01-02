@@ -8,9 +8,9 @@
 6. Guestbook REST with VueJS
 7. Crud App, filter, pagination with Angular JS and angular bootstrap, Laravel REST API
 8. Crud App completed with login [VueJS][1] and [angularJS][2] by [Bestmomo][3]
-[1] : https://github.com/bestmomo/lumenvue
-[2] : https://github.com/bestmomo/lumenangular
-[3] : https://github.com/bestmomo/
+[1]: https://github.com/bestmomo/lumenvue
+[2]: https://github.com/bestmomo/lumenangular
+[3]: https://github.com/bestmomo/
 
 ### Todo
 1. auth login
