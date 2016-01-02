@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function(){
-	return 'Hello';
+	return 'Landing Page';
 });
 
 
@@ -194,6 +194,17 @@ Route::post('api/jwt/authenticate', 'TokenAuthController@authenticate');
 Route::get('jwt/api/authenticate/user', 'TokenAuthController@getAuthUser');
 Route::resource('api/jwt/todo', 'CatatanController');
 
-Route::get('foo',function(){
-    return \App\User::all();
+
+//dream spa with vuejs-angular
+// by bestmomo
+Route::get('dreamngular',function(){
+    return view('dream.angular');
+});
+Route::resource('api/dream','DreamController');
+Route::group(['prefix' => 'auth'], function () {
+    Route::get('/log', 'AccountController@getLog');
+    Route::post('/login','AccountController@postLogin');
+    Route::get('/logout','AccountController@getLogout');
+    Route::get('/register','AccountController@getRegister');
+    Route::post('/register','AccountController@postRegister');
 });
