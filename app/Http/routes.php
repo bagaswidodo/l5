@@ -197,9 +197,20 @@ Route::resource('api/jwt/todo', 'CatatanController');
 
 //dream spa with vuejs-angular
 // by bestmomo
+
+//angular version
 Route::get('dreamngular',function(){
     return view('dream.angular');
 });
+
+//vuejs version
+Route::get('dreamvue',function(){
+    return view('dream.vue');
+});
+
+
+
+//api and route for dreams
 Route::resource('api/dream','DreamController');
 Route::group(['prefix' => 'auth'], function () {
     Route::get('/log', 'AccountController@getLog');
