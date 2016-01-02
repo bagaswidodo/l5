@@ -60,29 +60,48 @@ elixir(function(mix) {
 
 
     //dream spa angular
-    mix.scripts([
-        'dream/grayscale.js',
-        'dream/jquery.easing.min.js',
-    ], 'public/dream/plugin.js');
+    // mix.scripts([
+    //     'dream/grayscale.js',
+    //     'dream/jquery.easing.min.js',
+    // ], 'public/dream/plugin.js');
 
+    // mix.scripts([
+    //     'vendor/jquery/dist/jquery.min.js',
+    //     'vendor/bootstrap/dist/js/bootstrap.min.js',
+    //     'vendor/angular/angular.min.js',       
+    //     'vendor/angular-resource/angular-resource.min.js', 
+    //     'vendor/angular-cookies/angular-cookies.min.js' 
+    // ], 'public/dream/vendor.js','public/');
+
+    // mix.scripts([
+    //     'dream/vendor.js',
+    //     'dream/plugin.js'
+    // ], 'public/dream/lib.js','public/');
+
+    // mix.scripts([
+    //     'dream/mvc/app.js',
+    //     'dream/mvc/controllers.js',
+    //     'dream/mvc/services.js'
+    // ], 'public/dream/app.js');
+    
+    //dream spa vue
     mix.scripts([
         'vendor/jquery/dist/jquery.min.js',
         'vendor/bootstrap/dist/js/bootstrap.min.js',
-        'vendor/angular/angular.min.js',       
-        'vendor/angular-resource/angular-resource.min.js', 
-        'vendor/angular-cookies/angular-cookies.min.js' 
-    ], 'public/dream/vendor.js','public/');
+        'vendor/vue/dist/vue.min.js',
+        'vendor/vue-resource/dist/vue-resource.min.js'
+    ], 'public/dream/vue-vendor.js','public/');
 
     mix.scripts([
-        'dream/vendor.js',
-        'dream/plugin.js'
-    ], 'public/dream/lib.js','public/');
+        'dream/grayscale.js',
+        'dream/jquery.easing.min.js',
+    ], 'public/dream/vue-plugin.js');
 
     mix.scripts([
-        'dream/mvc/app.js',
-        'dream/mvc/controllers.js',
-        'dream/mvc/services.js'
-    ], 'public/dream/app.js');
+        'dream/vue-vendor.js',
+        'dream/vue-plugin.js'
+    ], 'public/dream/vue-lib.js','public/');
+
 
 
 });
