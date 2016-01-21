@@ -219,3 +219,7 @@ Route::group(['prefix' => 'auth'], function () {
     Route::get('/register','AccountController@getRegister');
     Route::post('/register','AccountController@postRegister');
 });
+
+//play with validation
+Route::get('trial/validation','TrialErrorController@index');
+Route::post('trial/validation','TrialErrorController@store');
