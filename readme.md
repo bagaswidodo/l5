@@ -9,6 +9,7 @@
 7. Crud App, filter, pagination with Angular JS and angular bootstrap, Laravel REST API
 8. Crud App completed with login [VueJS][1] and [angularJS][2] by [Bestmomo][3]
 9. 101 Laravel Validation
+10. Crud Application with Angular JS and material design
 [1]: https://github.com/bestmomo/lumenvue
 [2]: https://github.com/bestmomo/lumenangular
 [3]: https://github.com/bestmomo/
