@@ -223,3 +223,9 @@ Route::group(['prefix' => 'auth'], function () {
 //play with validation
 Route::get('trial/validation','TrialErrorController@index');
 Route::post('trial/validation','TrialErrorController@store');
+
+//Angular Crud Material Design
+Route::group(['prefix' => 'angular'], function () {
+    Route::resource('materialize/crud','AngularMaterialCrudController');
+    Route::get('materialize/api/products','AngularMaterialCrudController@ambil');
+});
