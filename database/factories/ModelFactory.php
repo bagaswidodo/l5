@@ -49,3 +49,12 @@ $factory->define(App\Customer::class,function (Faker\Generator $faker) {
 });
 
 
+$factory->define(App\Product::class,function(Faker\Generator $faker){
+    return [
+        'name'=>$faker->name,
+        'description'=>$faker->text,
+        'price'=>$faker->randomNumber,
+        'category_id'=>$faker->randomDigit
+    ];
+});
+
